@@ -1,17 +1,17 @@
 // Terima props lalu tampilkan dalam Contact component
 // Kalian bisa membuat CSS sendiri di src/components/Contact.css
 import React from "react";
-import "./Styles.css";
+import ProfilCard from "./ProfilCard";
 
 const Contact = (props) => {
   let { data } = props;
   return (
-    <div className="container">
-      <img src="props.data.photo" alt="Pas Foto"></img>
-      <div className="biodata">
-        <h1>{props.data.name}</h1>
-        <p>{props.data.phone}</p>
-        <p>{props.data.email}</p>
+    <div className="card">
+      <ProfilCard photo={data.photo} avatar={data.name} />
+      <div className="card-body">
+        <h3>{data.name}</h3>
+        <span>{data.phone}</span>
+        <span>{data.email}</span>
       </div>
     </div>
   );
